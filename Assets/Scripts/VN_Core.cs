@@ -40,6 +40,7 @@ public class VN_Core : MonoBehaviour {
         {
             case 0:
                 ChangeBG(bg_type.clouds_1);
+                PlayMusic();
                 ui_background.GetComponent<Animator>().Play("show");
                 Say(false);
                 break;
@@ -93,6 +94,11 @@ public class VN_Core : MonoBehaviour {
                 break;
         }
         ui_background.GetComponent<Animator>().Play("show");
+    }
+
+    private void PlayMusic()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     IEnumerator TypeWriter()
