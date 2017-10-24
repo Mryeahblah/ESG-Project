@@ -1,2 +1,2 @@
 # ESG-Project
-First "Triple-A" VN
+First "Triple-A" Visual Novel
