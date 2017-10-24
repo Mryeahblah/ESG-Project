@@ -1,2 +1,2 @@
 # ESG-Project
-First "Triple-A" Visual Novel
+The first in the world "Triple-A" Visual Novel
