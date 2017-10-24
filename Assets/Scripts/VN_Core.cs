@@ -9,11 +9,14 @@ public class VN_Core : MonoBehaviour {
     public string[] messages; // What speak
     public Text ui_dialbox; // Dialogue 
     public Text ui_namebox; // Name 
-    public Image Background; 
+    public Image ui_background;
+    public Sprite[] Backgrounds;
     public float textspeed; // Typewriter speed text
     //Private
     private int step;
     private bool IsTypewriterActive;
+
+    enum bg_type { clouds_1, street_1 };
 
     private void Start()
     {
@@ -36,20 +39,24 @@ public class VN_Core : MonoBehaviour {
         switch (step)
         {
             case 0:
-                Say(false);
-                Background.GetComponent<Animator>().Play("show");
-                break;
-            case 1:
+                ChangeBG(bg_type.clouds_1);
+                ui_background.GetComponent<Animator>().Play("show");
                 Say(false);
                 break;
             case 2:
-                Say(true);
+                ui_background.GetComponent<Animator>().Play("hide");
+                Say(false);
                 break;
             case 3:
+                ChangeBG(bg_type.street_1);
+                Say(false);
+                break;
+            case 9:
                 step = 0;
-                Background.GetComponent<Animator>().Play("hide");
+                ui_background.GetComponent<Animator>().Play("hide");
                 break;
             default:
+                Say(false);
                 break;
         }
     }
@@ -71,6 +78,21 @@ public class VN_Core : MonoBehaviour {
             ui_namebox.text = names[step];
         else
             ui_namebox.text = string.Empty;
+    }
+
+
+    private void ChangeBG(bg_type bg)
+    {
+        switch(bg)
+        {
+            case bg_type.street_1:
+                ui_background.sprite = Backgrounds[1];
+                break;
+            case bg_type.clouds_1:
+                ui_background.sprite = Backgrounds[0];
+                break;
+        }
+        ui_background.GetComponent<Animator>().Play("show");
     }
 
     IEnumerator TypeWriter()
