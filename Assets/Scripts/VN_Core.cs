@@ -7,14 +7,13 @@ public class VN_Core : MonoBehaviour {
     //Public
     public string[] names; // Who speak
     public string[] messages; // What speak
-    public Text ui_dialbox;
-    public Text ui_namebox;
-    public Image Background;
-    public float textspeed;
+    public Text ui_dialbox; // Dialogue 
+    public Text ui_namebox; // Name 
+    public Image Background; 
+    public float textspeed; // Typewriter speed text
     //Private
     private int step;
     private bool IsTypewriterActive;
-    private float yVelocity = 0.0f;
 
     private void Start()
     {
@@ -27,7 +26,7 @@ public class VN_Core : MonoBehaviour {
             if (IsTypewriterActive == false)
                 NextStep();
             else
-                DoneThisStep();
+                DoneThisStep(); // Show all text
     }
 
     private void NextStep()
