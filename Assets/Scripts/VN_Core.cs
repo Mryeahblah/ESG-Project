@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class VN_Core : MonoBehaviour {
     //Public
     public string[] names; // Who speak
     public string[] messages; // What speak
-    public Text ui_dialbox; // Dialogue 
+	public TextMeshProUGUI ui_dialbox;
     public Text ui_namebox; // Name 
     public Image ui_background;
     public Sprite[] Backgrounds;
@@ -65,7 +66,7 @@ public class VN_Core : MonoBehaviour {
     private void DoneThisStep()
     {
         StopAllCoroutines();
-        ui_dialbox.text = messages[step];
+		ui_dialbox.maxVisibleCharacters = messages [step].Length;
         step++;
         IsTypewriterActive = false;
     }
@@ -73,6 +74,7 @@ public class VN_Core : MonoBehaviour {
     private void Say(bool IsDialogue)
     {
         //StopAllCoroutines();
+		ui_dialbox.text = messages[step];
         StartCoroutine(TypeWriter());
 
         if (IsDialogue)
@@ -107,7 +109,7 @@ public class VN_Core : MonoBehaviour {
         Debug.Log("Current Step: " + step);
         for (int i = 0; i <= messages[step].Length; i++)
         {
-            ui_dialbox.text = messages[step].Substring(0, i);
+			ui_dialbox.maxVisibleCharacters = i;
             yield return new WaitForSeconds(textspeed);
         }
         IsTypewriterActive = false;
