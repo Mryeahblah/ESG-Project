@@ -195,7 +195,7 @@ RectTransform:
   m_GameObject: {fileID: 715093571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
+  m_LocalScale: {x: 0.015483506, y: 0.015483506, z: 0.015483506}
   m_Children:
   - {fileID: 752358326}
   - {fileID: 1054190779}
@@ -391,7 +391,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1054190778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0025634766, y: -257.5, z: 0}
+  m_LocalPosition: {x: -0.0025634766, y: -220.42429, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1873408611}
@@ -578,6 +578,7 @@ GameObject:
   - component: {fileID: 1873408611}
   - component: {fileID: 1873408613}
   - component: {fileID: 1873408612}
+  - component: {fileID: 1873408614}
   m_Layer: 5
   m_Name: ui_dial_text
   m_TagString: Untagged
@@ -642,6 +643,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1873408610}
+--- !u!114 &1873408614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1873408610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1967533602
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +799,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
